@@ -191,7 +191,7 @@ public class VideoPlayerView extends ScalableVideoView implements
   }
 
   public void setCurrentTime(float currentTime) {
-    float seekTime = currentTime * 1000;
+    float seekTime = currentTime * 1;
     if (mMediaPlayer == null) {
       Log.d(LOG_TAG, "MEDIA PLAYER IS NULL");
       return;
