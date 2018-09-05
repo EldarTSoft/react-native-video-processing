@@ -176,9 +176,9 @@ public class VideoPlayerViewManager extends SimpleViewManager<VideoPlayerView> {
     player.setCurrentTime(seekTime);
   }
 
-  @ReactProp(name = SET_PROGRESS_DELAY, defaultInt = 1000)
+  @ReactProp(name = SET_PROGRESS_DELAY, defaultInt = 10)
   public void setProgressDelay(final VideoPlayerView player, int delay) {
-    player.setProgressUpdateHandlerDelay(delay);
+    player.setProgressUpdateHandlerDelay(10);
   }
 
   @ReactProp(name = SET_VIDEO_END_TIME)
