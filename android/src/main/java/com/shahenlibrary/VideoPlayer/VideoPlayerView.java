@@ -298,7 +298,7 @@ public class VideoPlayerView extends ScalableVideoView implements
     Bitmap normalizedBmp = Bitmap.createBitmap(bmp, 0, 0, width, height, mx, true);
 
     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-    normalizedBmp.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+    normalizedBmp.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
     byte[] byteArray = byteArrayOutputStream .toByteArray();
     String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
