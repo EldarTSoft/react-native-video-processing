@@ -287,7 +287,7 @@ public class VideoPlayerView extends ScalableVideoView implements
   }
 
   public void getFrame(float sec) {
-    Bitmap bmp = metadataRetriever.getFrameAtTime((long) (sec * 1000));
+    Bitmap bmp = metadataRetriever.getFrameAtTime((long) (sec * 1000, 0x02));
 
     int width = Integer.parseInt(metadataRetriever.extractMetadata(FFmpegMediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH));
     int height = Integer.parseInt(metadataRetriever.extractMetadata(FFmpegMediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT));
