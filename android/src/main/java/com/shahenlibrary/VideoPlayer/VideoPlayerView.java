@@ -98,7 +98,7 @@ public class VideoPlayerView extends ScalableVideoView implements
           }
           // Log.d(LOG_TAG, "run: onChange videoStartAt: " + videoStartAt + " endAt " + videoEndAt + " currentPosition: " + mMediaPlayer.getCurrentPosition() + " duration: " + mMediaPlayer.getDuration());
           WritableMap event = Arguments.createMap();
-          event.putDouble(Events.CURRENT_TIME, mMediaPlayer.getCurrentPosition() / 1000);
+          event.putDouble(Events.CURRENT_TIME, mMediaPlayer.getCurrentPosition() / 1000000);
           eventEmitter.receiveEvent(getId(), EventsEnum.EVENT_PROGRESS.toString(), event);
         }
 
