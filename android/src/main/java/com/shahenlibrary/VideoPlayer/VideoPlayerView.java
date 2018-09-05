@@ -68,7 +68,7 @@ public class VideoPlayerView extends ScalableVideoView implements
   private Runnable progressRunnable = null;
   private Handler progressUpdateHandler = new Handler();
   private FFmpegMediaMetadataRetriever metadataRetriever = new FFmpegMediaMetadataRetriever();
-  private int progressUpdateHandlerDelay = 1000;
+  private int progressUpdateHandlerDelay = 10;
   private int videoStartAt = 0;
   private int videoEndAt = -1;
   private boolean mLooping = false;
