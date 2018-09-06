@@ -68,7 +68,7 @@ public class VideoPlayerView extends ScalableVideoView implements
   private Runnable progressRunnable = null;
   private Handler progressUpdateHandler = new Handler();
   private FFmpegMediaMetadataRetriever metadataRetriever = new FFmpegMediaMetadataRetriever();
-  private int progressUpdateHandlerDelay = 10;
+  private int progressUpdateHandlerDelay = 1000;
   private int videoStartAt = 0;
   private int videoEndAt = -1;
   private boolean mLooping = false;
@@ -98,7 +98,7 @@ public class VideoPlayerView extends ScalableVideoView implements
           }
           // Log.d(LOG_TAG, "run: onChange videoStartAt: " + videoStartAt + " endAt " + videoEndAt + " currentPosition: " + mMediaPlayer.getCurrentPosition() + " duration: " + mMediaPlayer.getDuration());
           WritableMap event = Arguments.createMap();
-          event.putDouble(Events.CURRENT_TIME, mMediaPlayer.getCurrentPosition() / 1000000);
+          event.putDouble(Events.CURRENT_TIME, mMediaPlayer.getCurrentPosition() / 1000);
           eventEmitter.receiveEvent(getId(), EventsEnum.EVENT_PROGRESS.toString(), event);
         }
 
