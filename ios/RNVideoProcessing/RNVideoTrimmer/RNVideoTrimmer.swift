@@ -519,12 +519,12 @@ class RNVideoTrimmer: NSObject {
     imageGenerator.maximumSize = CGSize(width: width, height: height)
     imageGenerator.appliesPreferredTrackTransform = true
     var second = atTime
-    if atTime > Float(asset.duration.seconds) || atTime < 0 {
+    if atTime > Float(asset.duration.seconds * 1000) || atTime < 0 {
       second = 0
     }
-    let timestamp = CMTime(seconds: Double(second), preferredTimescale: 600)
+    // let timestamp = CMTime(seconds: Double(second), preferredTimescale: 600)
     do {
-      let imageRef = try imageGenerator.copyCGImage(at: timestamp, actualTime: nil)
+      let imageRef = try imageGenerator.copyCGImage(at: second, actualTime: nil)
       let image = UIImage(cgImage: imageRef)
       if ( format == "base64" ) {
         let imgData = UIImagePNGRepresentation(image)
