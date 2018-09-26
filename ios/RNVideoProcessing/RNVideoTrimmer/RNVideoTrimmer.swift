@@ -522,7 +522,7 @@ class RNVideoTrimmer: NSObject {
     if atTime > Float(asset.duration.seconds * 1000) || atTime < 0 {
       second = 0
     }
-    // let timestamp = CMTime(seconds: Double(second), preferredTimescale: 600)
+    let timestamp = CMTime(seconds: Double(second / 1000), preferredTimescale: 600)
     do {
       let imageRef = try imageGenerator.copyCGImage(at: second, actualTime: nil)
       let image = UIImage(cgImage: imageRef)
