@@ -527,7 +527,7 @@ class RNVideoTrimmer: NSObject {
       let imageRef = try imageGenerator.copyCGImage(at: timestamp, actualTime: nil)
       let image = UIImage(cgImage: imageRef)
       let formatNew = "JPEG"
-      if ( format == "base64" ) {
+      if ( formatNew == "base64" ) {
         let imgData = UIImagePNGRepresentation(image)
         let base64string = imgData?.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
         if base64string != nil {
@@ -535,8 +535,8 @@ class RNVideoTrimmer: NSObject {
         } else {
           callback( ["Unable to convert to base64)", NSNull()]  )
         }
-      } else if ( format == "JPEG" ) {
-        let imgData = UIImageJPEGRepresentation(image, 0.5)
+      } else if ( formatNew == "JPEG" ) {
+        let imgData = UIImageJPEGRepresentation(image, 0.3)
 
         let fileName = ProcessInfo.processInfo.globallyUniqueString
         let fullPath = "\(NSTemporaryDirectory())\(fileName).jpg"
