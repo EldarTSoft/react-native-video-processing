@@ -524,7 +524,7 @@ class RNVideoTrimmer: NSObject {
     }
     let timestamp = CMTime(seconds: Double(second / 1000), preferredTimescale: 600)
     do {
-      let imageRef = try imageGenerator.copyCGImage(at: second, actualTime: nil)
+      let imageRef = try imageGenerator.copyCGImage(at: timestamp, actualTime: nil)
       let image = UIImage(cgImage: imageRef)
       if ( format == "base64" ) {
         let imgData = UIImagePNGRepresentation(image)
